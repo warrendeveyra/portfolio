@@ -16,7 +16,7 @@ export default function NavigationHeader() {
       <CssBaseline />
       <AppBar position="sticky" className={classes.navBar}>
         <Container maxWidth="lg">
-          <Toolbar style={{ height: "9vh" }} className={classes.animateTransition}>
+          <Toolbar style={{ height: "9vh" }}>
             <Typography noWrap className={classes.title}>
               <img
                 src={NavLogo}
@@ -45,7 +45,7 @@ export default function NavigationHeader() {
             >
               <b>Interest</b>
             </Link>
-            {/* <Link
+            <Link
               color="inherit"
               className={classes.buttonLink}
               component="button"
@@ -65,7 +65,7 @@ export default function NavigationHeader() {
               component="button"
             >
               <b>Activities</b>
-            </Link> */}
+            </Link>
           </Toolbar>
         </Container>
       </AppBar>
