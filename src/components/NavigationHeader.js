@@ -1,23 +1,74 @@
-import React, { Component } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
+import React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import { Container, Link} from "@material-ui/core";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { useStyles } from "./../styles/theme";
 
+import NavLogo from "./../assets/vectors/nav-logo.svg";
 
-export class NavigationHeader extends Component {
-    render() {
-        return (
-                <AppBar position="sticky" style={{ backgroundColor: "#FFF", color: "#000" }}>
-                    <Toolbar style={{ height: "10vh" }}>
-                        <Typography variant="h6" style={{ paddingLeft: "20px" }}>
-                            <b>Warren.</b> 
-                        </Typography>
-                        <Button color="inherit">Login</Button>
-                    </Toolbar> 
-                </AppBar>
-        );
-    }
+export default function NavigationHeader() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar position="sticky" className={classes.navBar}>
+        <Container maxWidth="lg">
+          <Toolbar style={{ height: "9vh" }} className={classes.animateTransition}>
+            <Typography noWrap className={classes.title}>
+              <img
+                src={NavLogo}
+                alt="portfolio logo"
+                className={classes.logo}
+              />
+            </Typography>
+            <Link
+              color="inherit"
+              className={classes.buttonLink}
+              component="button"
+            >
+              <b>Home</b>
+            </Link>
+            <Link
+              color="inherit"
+              className={classes.buttonLink}
+              component="button"
+            >
+              <b>About</b>
+            </Link>
+            <Link
+              color="inherit"
+              className={classes.buttonLink}
+              component="button"
+            >
+              <b>Interest</b>
+            </Link>
+            {/* <Link
+              color="inherit"
+              className={classes.buttonLink}
+              component="button"
+            >
+              <b>Experience</b>
+            </Link>
+            <Link
+              color="inherit"
+              className={classes.buttonLink}
+              component="button"
+            >
+              <b>Works</b>
+            </Link>
+            <Link
+              color="inherit"
+              className={classes.buttonLink}
+              component="button"
+            >
+              <b>Activities</b>
+            </Link> */}
+          </Toolbar>
+        </Container>
+      </AppBar>
+    </div>
+  );
 }
-
-export default NavigationHeader
