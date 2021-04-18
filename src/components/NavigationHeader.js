@@ -5,16 +5,18 @@ import Typography from "@material-ui/core/Typography";
 import { Container, Link } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useStyles } from "./../styles/theme";
+import { useTheme } from "@material-ui/core/styles";
 
 import { NavigationLogo } from "./svg";
 
 export default function NavigationHeader() {
   const classes = useStyles();
+  const theme = useTheme();
 
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="sticky" className={classes.navBar}>
+      <AppBar position="sticky" color="default" >
         <Container maxWidth="lg">
           <Toolbar style={{ height: "9vh" }}>
             <Typography noWrap className={classes.title}>

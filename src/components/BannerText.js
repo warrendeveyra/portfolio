@@ -39,25 +39,7 @@ export default function NavigationHeader() {
           component={md ? "h4" : "h3"}
           align={md ? "left" : "center"}
         >
-          {md ? (
-            <>
-              <span
-                className={clsx(classes.textBlack, classes.bannerTextNormal)}
-              >
-                👋 Hi I’m Warren,
-                <br />
-                A&nbsp;
-              </span>
-              <span
-                className={clsx(
-                  classes.textExtraBold,
-                  classes.bannerTextPurple
-                )}
-              >
-                Software Engineer
-              </span>
-            </>
-          ) : (
+          {!md ? (
             <>
               <span
                 className={clsx(classes.textBlack, classes.bannerTextSmall)}
@@ -70,6 +52,24 @@ export default function NavigationHeader() {
                 className={clsx(
                   classes.textExtraBold,
                   classes.bannerTextSmallPurple
+                )}
+              >
+                Software Engineer
+              </span>
+            </>
+          ) : (
+            <>
+              <span
+                className={clsx(classes.textBlack, classes.bannerTextNormal)}
+              >
+                👋 Hi I’m Warren,
+                <br />
+                A&nbsp;
+              </span>
+              <span
+                className={clsx(
+                  classes.textExtraBold,
+                  classes.bannerTextPurple
                 )}
               >
                 Software Engineer
