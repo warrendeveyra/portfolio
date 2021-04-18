@@ -16,9 +16,8 @@ export default function BannerIllustration() {
       direction="row"
       justify="center"
       alignItems="center"
-      className={classes.animateTransition}
     >
-      <BannerAvatar />
+      <BannerAvatar className={classes.animateTransition}/>
     </Grid>
   );
 }

@@ -84,11 +84,6 @@ export const useStyles = makeStyles((theme) => ({
   bannerTextPink: {
     color: "#DF09CA",
   },
-  navBar: {
-    color: "#000",
-    backgroundColor: "#F8F8FF",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
-  },
   buttonLink: {
     fontFamily: "Montserrat",
     fontStyle: "normal",

@@ -13,7 +13,7 @@ export class MainPage extends Component {
         <NavigationHeader />
         <Container component="main" maxWidth="lg">
           <Container maxWidth="lg">
-            <Grid container spacing={2} style={{ height: "90vh" }}>
+            <Grid container spacing={2} style={{ height: "90vh" }} >
               <BannerText />
               <Hidden smDown>
                 <BannerIllustration />

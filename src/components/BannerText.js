@@ -23,14 +23,12 @@ export default function NavigationHeader() {
       direction="row"
       justify="center"
       alignItems="center"
-      className={classes.animateTransition}
     >
       <Box mt={!sm ? 4 : 0} className={classes.animateTransition}>
         <Box
           display="flex"
           justifyContent={md ? "flex-start" : "center"}
           alignItems="center"
-          className={classes.animateTransition}
         >
           {!md ? <SingleAvatar /> : null}
         </Box>
