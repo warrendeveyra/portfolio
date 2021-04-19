@@ -5,16 +5,14 @@ import Typography from "@material-ui/core/Typography";
 import { Container, Link } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useStyles } from "./../styles/theme";
-import { useTheme } from "@material-ui/core/styles";
 
 import { NavigationLogo } from "./svg";
 
 export default function NavigationHeader() {
   const classes = useStyles();
-  const theme = useTheme();
 
   return (
-    <div className={classes.root}>
+    <div>
       <CssBaseline />
       <AppBar position="sticky" color="default" >
         <Container maxWidth="lg">
@@ -41,13 +39,6 @@ export default function NavigationHeader() {
               className={classes.buttonLink}
               component="button"
             >
-              <b>Interest</b>
-            </Link>
-            <Link
-              color="inherit"
-              className={classes.buttonLink}
-              component="button"
-            >
               <b>Experience</b>
             </Link>
             <Link
@@ -62,7 +53,7 @@ export default function NavigationHeader() {
               className={classes.buttonLink}
               component="button"
             >
-              <b>Activities</b>
+              <b>Achievements</b>
             </Link>
           </Toolbar>
         </Container>

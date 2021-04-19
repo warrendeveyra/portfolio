@@ -1,5 +1,6 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
+import ElipseVector from "./../assets/elipse.svg";
 
 export const theme = createMuiTheme({
   overrides: {
@@ -10,10 +11,20 @@ export const theme = createMuiTheme({
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
       },
       colorPrimary: {
-        ackgroundColor: "#9B09DF",
+        backgroundColor: "#9B09DF",
         color: "#fff",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
-      }
+      },
+    },
+    MuiPaper: {
+      elevation1: {
+        padding: "32px 48px 32px 48px",
+        marginTop: "22px",
+        marginBottom: "110px",
+        background: "#FAFAFF",
+        boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.04)",
+        borderRadius: "6px",
+      },
     },
   },
   palette: {
@@ -51,6 +62,27 @@ export const useStyles = makeStyles((theme) => ({
   animateTransition: {
     transition: "0.4s",
     transitionDelay: ".2s",
+  },
+  titleText: {
+    fontFamily: "Montserrat",
+    fontStyle: "normal",
+    fontWeight: "bold",
+    fontSize: "2rem",
+    lineHeight: "2rem",
+    color: "#373C44",
+    paddingLeft: theme.spacing(0.5),
+    "&:before": {
+      zIndex: -1,
+      content: '""',
+      backgroundImage: `url(${ElipseVector})`,
+      backgroundRepeat: "no-repeat",
+      display: "block",
+      height: "37px",
+      width: "37px",
+      top: "35px",
+      left: "-4px",
+      position: "relative",
+    },
   },
   textBlack: {
     fontFamily: "Montserrat",

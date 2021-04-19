@@ -5,6 +5,7 @@ import {
   BannerText,
   BannerIllustration,
 } from "./../components/";
+import { AboutMe, Experience, RecentWorks, Achievements} from "./../components/sections";
 
 export class MainPage extends Component {
   render() {
@@ -13,11 +14,17 @@ export class MainPage extends Component {
         <NavigationHeader />
         <Container component="main" maxWidth="lg">
           <Container maxWidth="lg">
-            <Grid container spacing={2} style={{ height: "90vh" }} >
+            <Grid container spacing={2} style={{ height: "100vh", marginTop: "-8vh" }}>
               <BannerText />
               <Hidden smDown>
                 <BannerIllustration />
               </Hidden>
+            </Grid>
+            <Grid container spacing={2}>
+              <AboutMe />
+              <Experience/>
+              <RecentWorks/>
+              <Achievements/>
             </Grid>
           </Container>
         </Container>
