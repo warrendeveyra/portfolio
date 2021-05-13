@@ -84,6 +84,22 @@ export const useStyles = makeStyles((theme) => ({
       position: "relative",
     },
   },
+  navBarMd: {
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+  },
+  navBarSm: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex',
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+    },
+  },
   textBlack: {
     fontFamily: "Montserrat",
     fontStyle: "normal",
