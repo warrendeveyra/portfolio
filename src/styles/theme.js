@@ -16,6 +16,23 @@ export const theme = createMuiTheme({
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
       },
     },
+    MuiButton: {
+      containedSecondary: {
+        fontFamily: 'Montserrat',
+        fontStyle: 'normal',
+        fontWeight: 'bold',
+        fontSize: '14px',
+        background: '#FAC036',
+        boxShadow: 'none',
+        borderRadius: '42px',
+        padding: '11px 21px 11px 21px',
+        "&:hover": {
+          transition: "0.4s",
+          background: '#FBC33E',
+          boxShadow: '0px 4px 4px rgba(250, 192, 54, 0.32)',
+        }
+      }
+    },
     MuiPaper: {
       elevation1: {
         padding: "32px 48px 32px 48px",
@@ -164,17 +181,6 @@ export const useStyles = makeStyles((theme) => ({
   },
   bannerTextPink: {
     color: "#DF09CA",
-  },
-  downloadButton: {
-    background: '#FAC036',
-    boxShadow: 'none',
-    borderRadius: '42px',
-    padding: '11px 21px 11px 21px',
-    "&:hover": {
-      transition: "0.4s",
-      background: '#FBC33E',
-      boxShadow: '0px 4px 4px rgba(250, 192, 54, 0.32)',
-    },
   },
   buttonLink: {
     fontFamily: "Montserrat",

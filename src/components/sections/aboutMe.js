@@ -76,7 +76,7 @@ export default function AboutMe() {
                     <b>Gravida sit elit sit cras volutpat odio. Id in amet, dui ornare mauris sodales aliquam amet. Tincidunt iaculis vel rutrum morbi aliquet vitae, adipiscing.</b>
                   </Typography>
                   <Box mt={2} mb={2}>
-                    <Button variant="contained" color="secondary" className={clsx(classes.downloadButtonText,classes.downloadButton)}>
+                    <Button variant="contained" color="secondary" >
                       Download CV
                     </Button>
                   </Box>
