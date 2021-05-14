@@ -237,5 +237,8 @@ export const useStyles = makeStyles((theme) => ({
   },
   mt8: {
     marginTop: '8vh' 
+  },
+  mt14: {
+    marginTop: '14vh' 
   }
 }));
