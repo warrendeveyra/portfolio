@@ -17,15 +17,17 @@ export const theme = createMuiTheme({
       },
     },
     MuiButton: {
-      containedSecondary: {
+      root: {
         fontFamily: 'Montserrat',
         fontStyle: 'normal',
         fontWeight: 'bold',
         fontSize: '14px',
+        padding: '11px 21px 11px 21px',
+      },
+      containedSecondary: {
         background: '#FAC036',
         boxShadow: 'none',
         borderRadius: '42px',
-        padding: '11px 21px 11px 21px',
         "&:hover": {
           transition: "0.4s",
           background: '#FBC33E',

@@ -16,7 +16,7 @@ export default function NavigationHeader() {
   return (
     <div>
       <CssBaseline />
-      <AppBar position="sticky" color="default" >
+      <AppBar position="sticky" color="default" elevation={0}>
         <Container maxWidth="lg">
           <Toolbar style={{ height: "9vh" }} className={classes.animateTransition}>
             <Typography noWrap className={classes.title}>
