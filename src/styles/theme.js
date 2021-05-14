@@ -63,6 +63,24 @@ export const useStyles = makeStyles((theme) => ({
     transition: "0.4s",
     transitionDelay: ".2s",
   },
+  cardPurple: {
+    background: '#9D57D3',
+    boxShadow: '0px 7px 20px -7px #9D57D3',
+    borderRadius: '20px',
+    color: '#FFFFFF'
+  },
+  cardYellow: {
+    background: '#F8D350',
+    boxShadow: '0px 7px 20px -7px #F8D350',
+    borderRadius: '20px',
+    color: '#4F545B'
+  },
+  cardPink: {
+    background: '#FC7281',
+    boxShadow: '0px 7px 20px -7px #FC7281',
+    borderRadius: '20px',
+    color: '#FFFFFF'
+  },
   titleText: {
     fontFamily: "Montserrat",
     fontStyle: "normal",
@@ -114,6 +132,12 @@ export const useStyles = makeStyles((theme) => ({
     fontSize: "2.1rem",
     lineHeight: "3.6rem",
   },
+  downloadButtonText: {
+    fontFamily: 'Montserrat',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: '14px'
+  },
   bannerTextSmallPurple: {
     color: "#9B09DF",
     fontSize: "2.4rem",
@@ -131,6 +155,17 @@ export const useStyles = makeStyles((theme) => ({
   },
   bannerTextPink: {
     color: "#DF09CA",
+  },
+  downloadButton: {
+    background: '#FAC036',
+    boxShadow: 'none',
+    borderRadius: '42px',
+    padding: '11px 21px 11px 21px',
+    "&:hover": {
+      transition: "0.4s",
+      background: '#FBC33E',
+      boxShadow: '0px 4px 4px rgba(250, 192, 54, 0.32)',
+    },
   },
   buttonLink: {
     fontFamily: "Montserrat",
@@ -179,4 +214,28 @@ export const useStyles = makeStyles((theme) => ({
       fill: "#0077b5",
     },
   },
+  colorCardTitle: {
+    fontFamily: 'Montserrat',
+    fontStyle: 'normal',
+    fontWeight: '800',
+    fontSize: '15px',
+    lineHeight: '18px'
+  },
+  colorCardSubtitle: {
+    fontFamily: 'Montserrat',
+    fontStyle: 'normal',
+    fontWeight: '600',
+    fontSize: '13px',
+    lineHeight: '16px',
+    textAlign: 'center'
+  },
+  mb0: {
+    marginBottom: 0
+  },
+  mb3: {
+    marginBottom: '3vh'
+  },
+  mt8: {
+    marginTop: '8vh' 
+  }
 }));
