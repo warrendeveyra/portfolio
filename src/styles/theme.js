@@ -30,7 +30,7 @@ export const theme = createMuiTheme({
         borderRadius: '42px',
         "&:hover": {
           transition: "0.4s",
-          background: '#FBC33E',
+          backgroundColor: '#FBC33E',
           boxShadow: '0px 4px 4px rgba(250, 192, 54, 0.32)',
         }
       }
