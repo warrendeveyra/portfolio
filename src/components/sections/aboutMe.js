@@ -116,7 +116,7 @@ export default function AboutMe() {
                         <Box mt={3} pb={2}>
                           <embed height={60} src={ArtVector} />
                         </Box>
-                        <Typography className={classes.colorCardTitle} variant="subtitle1" gutterBottom>
+                        <Typography align='center' className={classes.colorCardTitle} variant="subtitle1" gutterBottom>
                           Graphic Design
                         </Typography>
                         <Typography className={classes.colorCardSubtitle} variant="body2" gutterBottom>
@@ -139,7 +139,7 @@ export default function AboutMe() {
                       <Box mt={3} pb={2}>
                         <embed height={60} src={TechVector} />
                       </Box>
-                      <Typography className={classes.colorCardTitle} variant="subtitle1" gutterBottom>
+                      <Typography align='center' className={classes.colorCardTitle} variant="subtitle1" gutterBottom>
                           Technology
                       </Typography>
                       <Typography className={classes.colorCardSubtitle} variant="body2" gutterBottom>
@@ -162,7 +162,7 @@ export default function AboutMe() {
                         <Box mt={3} pb={2}>
                           <embed height={60} src={GameVector} />
                         </Box>
-                        <Typography className={classes.colorCardTitle} variant="subtitle1" gutterBottom>
+                        <Typography align='center' className={classes.colorCardTitle} variant="subtitle1" gutterBottom>
                           Video Games
                         </Typography>
                         <Typography className={classes.colorCardSubtitle} variant="body2" gutterBottom>
