@@ -25,6 +25,33 @@ export const theme = createMuiTheme({
         boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.04)",
         borderRadius: "6px",
       },
+      elevation2: {
+        marginTop: "22px",
+        marginBottom: "22px",
+        padding: "32px 48px 32px 48px",
+        background: '#9D57D3',
+        boxShadow: '0px 7px 20px -7px #9D57D3',
+        borderRadius: '20px',
+        color: '#FFFFFF'
+      },
+      elevation3: {
+        marginTop: "22px",
+        marginBottom: "22px",
+        padding: "32px 48px 32px 48px",
+        background: '#F8D350',
+        boxShadow: '0px 7px 20px -7px #F8D350',
+        borderRadius: '20px',
+        color: '#4F545B'
+      },
+      elevation4: {
+        marginTop: "22px",
+        marginBottom: "22px",
+        padding: "32px 48px 32px 48px",
+        background: '#FC7281',
+        boxShadow: '0px 7px 20px -7px #FC7281',
+        borderRadius: '20px',
+        color: '#FFFFFF'
+      }
     },
   },
   palette: {
@@ -62,24 +89,6 @@ export const useStyles = makeStyles((theme) => ({
   animateTransition: {
     transition: "0.4s",
     transitionDelay: ".2s",
-  },
-  cardPurple: {
-    background: '#9D57D3',
-    boxShadow: '0px 7px 20px -7px #9D57D3',
-    borderRadius: '20px',
-    color: '#FFFFFF'
-  },
-  cardYellow: {
-    background: '#F8D350',
-    boxShadow: '0px 7px 20px -7px #F8D350',
-    borderRadius: '20px',
-    color: '#4F545B'
-  },
-  cardPink: {
-    background: '#FC7281',
-    boxShadow: '0px 7px 20px -7px #FC7281',
-    borderRadius: '20px',
-    color: '#FFFFFF'
   },
   titleText: {
     fontFamily: "Montserrat",

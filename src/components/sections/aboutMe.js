@@ -106,7 +106,7 @@ export default function AboutMe() {
             <Grid container item justify="space-between" className={classes.mt8}>
                 <Grid item xs={12} md={4} >
                   <Box pl={smallDevice ? 0 : 2} pr={smallDevice ? 0 : 2}>
-                    <Paper className={classes.cardPurple}>
+                    <Paper elevation={2} >
                       <Grid
                         container
                         direction="column"
@@ -129,7 +129,7 @@ export default function AboutMe() {
                 </Grid>
                 <Grid item xs={12} md={4} >
                   <Box pl={smallDevice ? 0 : 2} pr={smallDevice ? 0 : 2}>
-                    <Paper className={classes.cardYellow}>
+                    <Paper elevation={3}>
                     <Grid
                         container
                         direction="column"
@@ -152,7 +152,7 @@ export default function AboutMe() {
                 </Grid>
                 <Grid item xs={12} md={4}>
                   <Box pl={smallDevice ? 0 : 2} pr={smallDevice ? 0 : 2}>
-                    <Paper className={classes.cardPink}>
+                    <Paper elevation={4}>
                       <Grid
                         container
                         direction="column"
