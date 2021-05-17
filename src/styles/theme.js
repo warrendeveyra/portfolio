@@ -16,6 +16,31 @@ export const theme = createMuiTheme({
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
       },
     },
+    MuiTimelineDot: {
+      root: {
+        marginTop: "0px",
+        marginBottom: "0px",
+        boxShadow: "none"
+      }
+    },
+    MuiTimelineContent: {
+      root: {
+        paddingTop: "0px"
+      }
+    },
+    MuiTimelineConnector: {
+      root: {
+        width: "4px",
+        backgroundColor: "#9B09DF"
+      },
+    },
+    MuiTimelineItem: {
+      missingOppositeContent: {
+        "&:before": {
+          display: "none"
+        }
+      }
+    },
     MuiButton: {
       root: {
         fontFamily: 'Montserrat',
@@ -70,6 +95,18 @@ export const theme = createMuiTheme({
         boxShadow: '0px 7px 20px -7px #FC7281',
         borderRadius: '20px',
         color: '#FFFFFF'
+      },
+      elevation5: {
+        cursor: 'pointer',
+        padding: "32px 48px 32px 48px",
+        marginTop: "22px",
+        marginBottom: "22px",
+        background: "#FAFAFF",
+        boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.04)",
+        borderRadius: "6px",
+        "&:hover": {
+          boxShadow: '0px 16px 38px -8px rgba(0, 0, 0, 0.05)'
+        }
       }
     },
   },
