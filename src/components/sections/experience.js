@@ -19,7 +19,7 @@ export default function Experience() {
   const smallDevice = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Grid item container xs={12} md={12} style={!smallDevice ? { height: "100vh" } : null}>
+    <Grid item container xs={12} md={12} >
       <Grid item xs={12} md={12}>
         <Typography variant="h4" component="h4" className={classes.titleText}>
         Experience
