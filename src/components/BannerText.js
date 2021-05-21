@@ -82,7 +82,8 @@ export default function NavigationHeader() {
           className={classes.animateTransition}
         >
           <Link
-            href="https://github.com/warrendeveyra"
+            target="_blank" 
+            to="https://github.com/warrendeveyra"
             color="inherit"
             component="button"
             style={{
@@ -94,7 +95,8 @@ export default function NavigationHeader() {
             <GithubIcon />
           </Link>
           <Link
-            href="https://gitlab.com/warrendeveyra11" 
+            target="_blank" 
+            to="https://gitlab.com/warrendeveyra11" 
             color="inherit"
             component="button"
             style={{
@@ -106,7 +108,8 @@ export default function NavigationHeader() {
             <GitlabIcon />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/warren-de-veyra-552224195/"
+            target="_blank" 
+            to="https://www.linkedin.com/in/warren-de-veyra-552224195/"
             color="inherit"
             component="button"
             style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
