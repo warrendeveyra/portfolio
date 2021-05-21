@@ -4,7 +4,9 @@ import { useStyles } from "./../../styles/theme";
 function IconLinkedIn() {
   const classes = useStyles();
   return (
-    <svg
+    <svg 
+      href="https://www.linkedin.com/in/warren-de-veyra-552224195/"
+      target="_blank"
       className={classes.linkedInButton}
       width="44"
       height="44"
