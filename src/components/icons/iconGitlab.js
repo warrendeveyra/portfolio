@@ -5,8 +5,6 @@ function IconGitlab() {
   const classes = useStyles();
   return (
     <svg
-      href="https://gitlab.com/warrendeveyra11"
-      target="_blank"
       className={classes.gitlabButton}
       width="44"
       height="44"

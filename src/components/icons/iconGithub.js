@@ -5,8 +5,6 @@ function IconGithub() {
   const classes = useStyles();
   return (
     <svg
-      href="https://github.com/warrendeveyra"
-      target="_blank"
       className={classes.githubButton}
       width="44"
       height="44"
