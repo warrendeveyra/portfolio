@@ -81,11 +81,10 @@ export default function NavigationHeader() {
           alignItems="center"
           className={classes.animateTransition}
         >
-          <Link
+          <a
+            rel="noreferrer"
             target="_blank" 
-            to="https://github.com/warrendeveyra"
-            color="inherit"
-            component="button"
+            href="https://github.com/warrendeveyra"
             style={{
               paddingTop: "1rem",
               paddingBottom: "1rem",
@@ -93,12 +92,11 @@ export default function NavigationHeader() {
             }}
           >
             <GithubIcon />
-          </Link>
-          <Link
+          </a>
+          <a
+            rel="noreferrer"
             target="_blank" 
-            to="https://gitlab.com/warrendeveyra11" 
-            color="inherit"
-            component="button"
+            href="https://gitlab.com/warrendeveyra11"
             style={{
               paddingTop: "1rem",
               paddingBottom: "1rem",
@@ -106,16 +104,18 @@ export default function NavigationHeader() {
             }}
           >
             <GitlabIcon />
-          </Link>
-          <Link
+          </a>
+          <a
+            rel="noreferrer"
             target="_blank" 
-            to="https://www.linkedin.com/in/warren-de-veyra-552224195/"
-            color="inherit"
-            component="button"
-            style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
+            href="https://www.linkedin.com/in/warren-de-veyra-552224195/"
+            style={{
+              paddingTop: "1rem",
+              paddingBottom: "1rem",
+            }} 
           >
             <LinkedInIcon />
-          </Link>
+          </a>
         </Box>
         <br />
         <Box
