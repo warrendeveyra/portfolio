@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 
 import { useStyles } from "./../styles/theme";
 import { BannerAvatar } from "./svg";
@@ -16,8 +16,9 @@ export default function BannerIllustration() {
       direction="row"
       justify="center"
       alignItems="center"
+      sx={{ display: { xs: 'none', md: 'flex' } }}
     >
-      <BannerAvatar className={classes.animateTransition}/>
+      <BannerAvatar className={classes.animateTransition} />
     </Grid>
   );
 }

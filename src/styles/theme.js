@@ -1,113 +1,127 @@
-import { createMuiTheme } from "@material-ui/core/styles";
-import { makeStyles } from "@material-ui/core/styles";
+import { createTheme } from "@mui/material/styles";
+import { makeStyles } from "@mui/styles";
 import ElipseVector from "./../assets/elipse.svg";
 
-export const theme = createMuiTheme({
-  overrides: {
+export const theme = createTheme({
+  components: {
     MuiAppBar: {
-      colorDefault: {
-        backgroundColor: "#F8F8FF",
-        color: "#000",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
-      },
-      colorPrimary: {
-        backgroundColor: "#9B09DF",
-        color: "#fff",
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
+      styleOverrides: {
+        colorDefault: {
+          backgroundColor: "#F8F8FF",
+          color: "#000",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
+        },
+        colorPrimary: {
+          backgroundColor: "#9B09DF",
+          color: "#fff",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
+        },
       },
     },
     MuiTimelineDot: {
-      root: {
-        marginTop: "0px",
-        marginBottom: "0px",
-        boxShadow: "none"
-      }
+      styleOverrides: {
+        root: {
+          marginTop: "0px",
+          marginBottom: "0px",
+          boxShadow: "none"
+        }
+      },
     },
     MuiTimelineContent: {
-      root: {
-        paddingTop: "0px"
-      }
+      styleOverrides: {
+        root: {
+          paddingTop: "0px"
+        }
+      },
     },
     MuiTimelineConnector: {
-      root: {
-        width: "4px",
-        backgroundColor: "#9B09DF"
+      styleOverrides: {
+        root: {
+          width: "4px",
+          backgroundColor: "#9B09DF"
+        },
       },
     },
     MuiTimelineItem: {
-      missingOppositeContent: {
-        "&:before": {
-          display: "none"
+      styleOverrides: {
+        missingOppositeContent: {
+          "&:before": {
+            display: "none"
+          }
         }
-      }
+      },
     },
     MuiButton: {
-      root: {
-        fontFamily: 'Montserrat',
-        fontStyle: 'normal',
-        fontWeight: 'bold',
-        fontSize: '14px',
-        padding: '11px 21px 11px 21px',
-      },
-      containedSecondary: {
-        background: '#FAC036',
-        boxShadow: 'none',
-        borderRadius: '42px',
-        "&:hover": {
-          transition: "0.4s",
-          backgroundColor: '#FBC33E',
-          boxShadow: '0px 4px 4px rgba(250, 192, 54, 0.32)',
+      styleOverrides: {
+        root: {
+          fontFamily: 'Montserrat',
+          fontStyle: 'normal',
+          fontWeight: 'bold',
+          fontSize: '14px',
+          padding: '11px 21px 11px 21px',
+        },
+        containedSecondary: {
+          background: '#FAC036',
+          boxShadow: 'none',
+          borderRadius: '42px',
+          "&:hover": {
+            transition: "0.4s",
+            backgroundColor: '#FBC33E',
+            boxShadow: '0px 4px 4px rgba(250, 192, 54, 0.32)',
+          }
         }
-      }
+      },
     },
     MuiPaper: {
-      elevation1: {
-        padding: "32px 48px 32px 48px",
-        marginTop: "22px",
-        marginBottom: "110px",
-        background: "#FAFAFF",
-        boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.04)",
-        borderRadius: "6px",
-      },
-      elevation2: {
-        marginTop: "22px",
-        marginBottom: "22px",
-        padding: "32px 48px 32px 48px",
-        background: '#9D57D3',
-        boxShadow: '0px 7px 20px -7px #9D57D3',
-        borderRadius: '20px',
-        color: '#FFFFFF'
-      },
-      elevation3: {
-        marginTop: "22px",
-        marginBottom: "22px",
-        padding: "32px 48px 32px 48px",
-        background: '#F8D350',
-        boxShadow: '0px 7px 20px -7px #F8D350',
-        borderRadius: '20px',
-        color: '#4F545B'
-      },
-      elevation4: {
-        marginTop: "22px",
-        marginBottom: "22px",
-        padding: "32px 48px 32px 48px",
-        background: '#FC7281',
-        boxShadow: '0px 7px 20px -7px #FC7281',
-        borderRadius: '20px',
-        color: '#FFFFFF'
-      },
-      elevation5: {
-        cursor: 'pointer',
-        padding: "32px 48px 32px 48px",
-        marginTop: "22px",
-        marginBottom: "22px",
-        background: "#FAFAFF",
-        boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.04)",
-        borderRadius: "6px",
-        "&:hover": {
-          boxShadow: '0px 16px 38px -8px rgba(0, 0, 0, 0.05)'
+      styleOverrides: {
+        elevation1: {
+          padding: "32px 48px 32px 48px",
+          marginTop: "22px",
+          marginBottom: "110px",
+          background: "#FAFAFF",
+          boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.04)",
+          borderRadius: "6px",
+        },
+        elevation2: {
+          marginTop: "22px",
+          marginBottom: "22px",
+          padding: "32px 48px 32px 48px",
+          background: '#9D57D3',
+          boxShadow: '0px 7px 20px -7px #9D57D3',
+          borderRadius: '20px',
+          color: '#FFFFFF'
+        },
+        elevation3: {
+          marginTop: "22px",
+          marginBottom: "22px",
+          padding: "32px 48px 32px 48px",
+          background: '#F8D350',
+          boxShadow: '0px 7px 20px -7px #F8D350',
+          borderRadius: '20px',
+          color: '#4F545B'
+        },
+        elevation4: {
+          marginTop: "22px",
+          marginBottom: "22px",
+          padding: "32px 48px 32px 48px",
+          background: '#FC7281',
+          boxShadow: '0px 7px 20px -7px #FC7281',
+          borderRadius: '20px',
+          color: '#FFFFFF'
+        },
+        elevation5: {
+          cursor: 'pointer',
+          padding: "32px 48px 32px 48px",
+          marginTop: "22px",
+          marginBottom: "22px",
+          background: "#FAFAFF",
+          boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.04)",
+          borderRadius: "6px",
+          "&:hover": {
+            boxShadow: '0px 16px 38px -8px rgba(0, 0, 0, 0.05)'
+          }
         }
-      }
+      },
     },
   },
   palette: {
@@ -168,17 +182,13 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   navBarMd: {
+    display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
     },
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
   },
   navBarSm: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'flex',
-    },
+    display: 'flex',
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
@@ -290,9 +300,9 @@ export const useStyles = makeStyles((theme) => ({
     marginBottom: '3vh'
   },
   mt8: {
-    marginTop: '8vh' 
+    marginTop: '8vh'
   },
   mt14: {
-    marginTop: '14vh' 
+    marginTop: '14vh'
   }
 }));

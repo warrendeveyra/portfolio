@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { Container, Grid, Hidden } from "@material-ui/core";
+import { Container, Grid } from "@mui/material";
 import {
   NavigationHeader,
   BannerText,
   BannerIllustration,
 } from "./../components/";
-import { AboutMe, Experience, RecentWorks, Achievements} from "./../components/sections";
+import { AboutMe, Experience, RecentWorks, Achievements } from "./../components/sections";
 
 export class MainPage extends Component {
   render() {
@@ -16,15 +16,13 @@ export class MainPage extends Component {
           <Container maxWidth="lg">
             <Grid container spacing={2} style={{ height: "100vh", marginTop: "-8vh" }}>
               <BannerText />
-              <Hidden smDown>
-                <BannerIllustration />
-              </Hidden>
+              <BannerIllustration />
             </Grid>
             <Grid container spacing={2}>
               <AboutMe />
-              <Experience/>
-              <RecentWorks/>
-              <Achievements/>
+              <Experience />
+              <RecentWorks />
+              <Achievements />
             </Grid>
           </Container>
         </Container>

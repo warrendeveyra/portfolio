@@ -1,7 +1,7 @@
 import React from "react";
-import { Grid, Typography, Box } from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { Grid, Typography, Box } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import clsx from "clsx";
 
 import SingleAvatar from "./../components/svg/singleAvatar";
@@ -21,13 +21,13 @@ export default function NavigationHeader() {
       sm={12}
       md={6}
       direction="row"
-      justify="center"
+      justifyContent="center"
       alignItems="center"
     >
       <Box mt={!sm ? 4 : 0} className={classes.animateTransition}>
         <Box
           display="flex"
-          justifyContent={md ? "flex-start" : "center"}
+          justifyContent="center"
           alignItems="center"
         >
           {!md ? <SingleAvatar /> : null}
@@ -35,14 +35,14 @@ export default function NavigationHeader() {
         <Typography
           variant={md ? "h4" : "h3"}
           component={md ? "h4" : "h3"}
-          align={md ? "left" : "center"}
+          align="center"
         >
           {!md ? (
             <>
               <span
                 className={clsx(classes.textBlack, classes.bannerTextSmall)}
               >
-                Hi I’m Warren,
+                Hi I’m Ren,
                 <br />
                 A&nbsp;
               </span>
@@ -52,7 +52,7 @@ export default function NavigationHeader() {
                   classes.bannerTextSmallPurple
                 )}
               >
-                Software Engineer
+                Software Developer
               </span>
             </>
           ) : (
@@ -60,7 +60,7 @@ export default function NavigationHeader() {
               <span
                 className={clsx(classes.textBlack, classes.bannerTextNormal)}
               >
-                👋 Hi I’m Warren,
+                👋 Hi I’m Ren,
                 <br />
                 A&nbsp;
               </span>
@@ -70,20 +70,20 @@ export default function NavigationHeader() {
                   classes.bannerTextPurple
                 )}
               >
-                Software Engineer
+                Software Developer
               </span>
             </>
           )}
         </Typography>
         <Box
           display="flex"
-          justifyContent={md ? "flex-start" : "center"}
+          justifyContent="center"
           alignItems="center"
           className={classes.animateTransition}
         >
           <a
             rel="noreferrer"
-            target="_blank" 
+            target="_blank"
             href="https://github.com/warrendeveyra"
             style={{
               paddingTop: "1rem",
@@ -95,7 +95,7 @@ export default function NavigationHeader() {
           </a>
           <a
             rel="noreferrer"
-            target="_blank" 
+            target="_blank"
             href="https://gitlab.com/warrendeveyra11"
             style={{
               paddingTop: "1rem",
@@ -107,12 +107,12 @@ export default function NavigationHeader() {
           </a>
           <a
             rel="noreferrer"
-            target="_blank" 
+            target="_blank"
             href="https://www.linkedin.com/in/warren-de-veyra-552224195/"
             style={{
               paddingTop: "1rem",
               paddingBottom: "1rem",
-            }} 
+            }}
           >
             <LinkedInIcon />
           </a>
@@ -120,7 +120,7 @@ export default function NavigationHeader() {
         <br />
         <Box
           display="flex"
-          justifyContent={md ? "flex-start" : "center"}
+          justifyContent="center"
           alignItems="center"
           className={classes.animateTransition}
         >
@@ -131,7 +131,7 @@ export default function NavigationHeader() {
         <br />
         <Box
           display="flex"
-          justifyContent={md ? "flex-start" : "center"}
+          justifyContent="center"
           alignItems="center"
           className={classes.animateTransition}
         >

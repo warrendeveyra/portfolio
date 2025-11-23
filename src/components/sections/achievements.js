@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Typography, Paper } from "@material-ui/core";
+import { Grid, Typography, Paper } from "@mui/material";
 
 import { useStyles } from "../../styles/theme";
 
@@ -9,7 +9,7 @@ export default function Achievements() {
     <Grid item container xs={12} sm={12} md={12}>
       <Grid item xs={12} md={12}>
         <Typography variant="h4" component="h4" className={classes.titleText}>
-        Achievements
+          Achievements
         </Typography>
       </Grid>
       <Grid item xs={12} md={12}>

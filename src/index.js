@@ -1,17 +1,19 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import MainPage from "./containers/MainPage";
 import reportWebVitals from "./reportWebVitals";
-import { MuiThemeProvider } from "@material-ui/core/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./styles/theme";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
-    <MuiThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
       <MainPage />
-    </MuiThemeProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+    </ThemeProvider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
