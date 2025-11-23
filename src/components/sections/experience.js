@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { Grid, Typography, Paper, Avatar } from "@mui/material";
 import Timeline from '@mui/lab/Timeline'
 import TimelineItem from '@mui/lab/TimelineItem';
@@ -8,8 +8,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 
 
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { useTheme } from '@mui/material/styles';
+
 
 import { useStyles } from "../../styles/theme";
 import acn from "../../assets/images/acn.png";
@@ -20,7 +19,7 @@ import { ExpandableText } from "./ExpandableText";
 
 export default function Experience() {
   const classes = useStyles();
-  const theme = useTheme();
+
 
 
   return (
