@@ -62,7 +62,7 @@ export default function AboutMe() {
     <Grid item container xs={12} sm={12} md={12} >
       <Grid item xs={12} md={12}>
         <Typography variant="h4" component="h4" className={classes.titleText}>
-          About me
+          <b>About me</b>
         </Typography>
       </Grid>
       <Grid item xs={12} md={12}>
@@ -71,8 +71,10 @@ export default function AboutMe() {
             <Grid item xs={12} md={6}>
               <Box pl={smallDevice ? 0 : 2} pr={smallDevice ? 0 : 2}>
                 <Grid item md={12}>
+                  <Typography variant="h5" gutterBottom><b>Professional Summary</b></Typography>
                   <Typography variant="body1" gutterBottom>
-                    <b>Pragmatic, tool-agnostic developer focused on building scalable, maintainable systems. Skilled in modernizing legacy stacks, optimizing cloud workflows, and blending backend precision with frontend finesse and creative design to deliver lasting solutions.</b>
+                    <b>Pragmatic, tool-agnostic developer focused on building scalable, maintainable systems. Skilled in modernizing legacy stacks, optimizing cloud workflows,
+                      and blending backend precision with frontend finesse and creative design to deliver lasting solutions.</b>
                   </Typography>
                   <Box mt={2} mb={2}>
                     <Button variant="contained" color="secondary" >

@@ -5,7 +5,7 @@ import {
   BannerText,
   BannerIllustration,
 } from "./../components/";
-import { AboutMe, Experience, RecentWorks, Achievements } from "./../components/sections";
+import { AboutMe, Experience, RecentWorks, Achievements, TechStackMarquee } from "./../components/sections";
 
 export class MainPage extends Component {
   render() {
@@ -19,6 +19,7 @@ export class MainPage extends Component {
               <BannerIllustration />
             </Grid>
             <Grid container spacing={2}>
+              <TechStackMarquee />
               <AboutMe />
               <Experience />
               <RecentWorks />

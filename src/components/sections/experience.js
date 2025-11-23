@@ -26,7 +26,7 @@ export default function Experience() {
     <Grid item container xs={12} md={12} >
       <Grid item xs={12} md={12}>
         <Typography variant="h4" component="h4" className={classes.titleText}>
-          Experience
+          <b>Experience</b>
         </Typography>
       </Grid>
       <Grid container item justifyContent="center" style={{ paddingBottom: "6rem" }} >
@@ -48,7 +48,7 @@ export default function Experience() {
                 </TimelineSeparator>
                 <TimelineContent style={{ marginBottom: "2rem" }}>
                   <Typography variant="body2" color="textSecondary">
-                    Apr 2023 - Present
+                    Apr 2025 - Present
                   </Typography>
                   <Typography variant="h6" component="h1" style={{ fontWeight: "bold" }}>
                     Senior Software Engineer
@@ -69,7 +69,7 @@ export default function Experience() {
                 </TimelineSeparator>
                 <TimelineContent style={{ marginBottom: "2rem" }}>
                   <Typography variant="body2" color="textSecondary">
-                    Dec 2022 - Apr 2023
+                    Dec 2022 - Apr 2025
                   </Typography>
                   <Typography variant="h6" component="h1" style={{ fontWeight: "bold" }}>
                     Analyst Programmer

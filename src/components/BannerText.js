@@ -7,6 +7,7 @@ import clsx from "clsx";
 import SingleAvatar from "./../components/svg/singleAvatar";
 import { LinkedInIcon, GithubIcon, GitlabIcon, Scrollicon } from "./icons";
 import { useStyles } from "./../styles/theme";
+import { TypingEffect } from "./TypingEffect";
 
 export default function NavigationHeader() {
   const classes = useStyles();
@@ -46,14 +47,19 @@ export default function NavigationHeader() {
                 <br />
                 A&nbsp;
               </span>
-              <span
+              <TypingEffect
+                words={[
+                  "Developer",
+                  "Tinkerer",
+                  "Tech Enthusiast",
+                  "Problem Solver",
+                  "Code Craftsman"
+                ]}
                 className={clsx(
                   classes.textExtraBold,
                   classes.bannerTextSmallPurple
                 )}
-              >
-                Software Developer
-              </span>
+              />
             </>
           ) : (
             <>
@@ -64,14 +70,19 @@ export default function NavigationHeader() {
                 <br />
                 A&nbsp;
               </span>
-              <span
+              <TypingEffect
+                words={[
+                  "Developer",
+                  "Tinkerer",
+                  "Tech Enthusiast",
+                  "Problem Solver",
+                  "Code Craftsman"
+                ]}
                 className={clsx(
                   classes.textExtraBold,
                   classes.bannerTextPurple
                 )}
-              >
-                Software Developer
-              </span>
+              />
             </>
           )}
         </Typography>
