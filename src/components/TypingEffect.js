@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export const TypingEffect = ({ words, typingSpeed = 100, deletingSpeed = 50, pauseDuration = 2000, className }) => {
+export const TypingEffect = ({ words, typingSpeed = 100, deletingSpeed = 50, pauseDuration = 2000, className, minWidth = '280px', textAlign = 'left', prefix = '', prefixClassName = '' }) => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [currentText, setCurrentText] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
@@ -33,8 +33,8 @@ export const TypingEffect = ({ words, typingSpeed = 100, deletingSpeed = 50, pau
     }, [currentText, isDeleting, currentWordIndex, words, typingSpeed, deletingSpeed, pauseDuration]);
 
     return (
-        <span className={className} style={{ display: 'inline-block', minWidth: '280px', textAlign: 'left' }}>
-            {currentText}
+        <span className={className} style={{ display: 'inline-block', minWidth, textAlign }}>
+            <span className={prefixClassName}>{prefix}</span>{currentText}
             <span style={{ opacity: 0.7 }}>|</span>
         </span>
     );

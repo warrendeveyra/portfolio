@@ -10,6 +10,14 @@ function scrollIcon(props) {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
+      <style>
+        {`
+          @keyframes scroll {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(15px); opacity: 0; }
+          }
+        `}
+      </style>
       <rect
         x={1}
         y={1}
@@ -19,7 +27,13 @@ function scrollIcon(props) {
         stroke="#000"
         strokeWidth={2}
       />
-      <circle cx={14.5} cy={10.039} r={4.462} fill="#000" />
+      <circle
+        cx={14.5}
+        cy={10.039}
+        r={4.462}
+        fill="#000"
+        style={{ animation: "scroll 2.5s ease-out infinite" }}
+      />
     </svg>
   );
 }

@@ -25,7 +25,7 @@ export default function NavigationHeader() {
       justifyContent="center"
       alignItems="center"
     >
-      <Box mt={!sm ? 4 : 0} className={classes.animateTransition}>
+      <Box mt={!sm ? 4 : 0} px={!sm ? 2 : 0} className={classes.animateTransition}>
         <Box
           display="flex"
           justifyContent="center"
@@ -36,7 +36,7 @@ export default function NavigationHeader() {
         <Typography
           variant={md ? "h4" : "h3"}
           component={md ? "h4" : "h3"}
-          align="center"
+          align={md ? "left" : "center"}
         >
           {!md ? (
             <>
@@ -45,7 +45,6 @@ export default function NavigationHeader() {
               >
                 Hi I’m Ren,
                 <br />
-                A&nbsp;
               </span>
               <TypingEffect
                 words={[
@@ -59,6 +58,10 @@ export default function NavigationHeader() {
                   classes.textExtraBold,
                   classes.bannerTextSmallPurple
                 )}
+                minWidth="min(340px, 80vw)"
+                textAlign="center"
+                prefix="A "
+                prefixClassName={classes.textMain}
               />
             </>
           ) : (
@@ -68,7 +71,6 @@ export default function NavigationHeader() {
               >
                 👋 Hi I’m Ren,
                 <br />
-                A&nbsp;
               </span>
               <TypingEffect
                 words={[
@@ -82,13 +84,16 @@ export default function NavigationHeader() {
                   classes.textExtraBold,
                   classes.bannerTextPurple
                 )}
+                minWidth="min(500px, 60vw)"
+                prefix="A "
+                prefixClassName={classes.textMain}
               />
             </>
           )}
         </Typography>
         <Box
           display="flex"
-          justifyContent="center"
+          justifyContent={md ? "flex-start" : "center"}
           alignItems="center"
           className={classes.animateTransition}
         >
@@ -131,7 +136,7 @@ export default function NavigationHeader() {
         <br />
         <Box
           display="flex"
-          justifyContent="center"
+          justifyContent={md ? "flex-start" : "center"}
           alignItems="center"
           className={classes.animateTransition}
         >
@@ -142,7 +147,7 @@ export default function NavigationHeader() {
         <br />
         <Box
           display="flex"
-          justifyContent="center"
+          justifyContent={md ? "flex-start" : "center"}
           alignItems="center"
           className={classes.animateTransition}
         >

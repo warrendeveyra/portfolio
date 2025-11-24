@@ -30,15 +30,19 @@ const SectionContainer = styled(Box)({
     alignItems: 'center',
 });
 
-const SectionTitle = styled(Typography)({
+const SectionTitle = styled(Typography)(({ theme }) => ({
     fontSize: '1.5rem',
     fontWeight: 600,
     color: '#373C44',
     marginBottom: '2rem',
     fontFamily: 'Montserrat',
-});
+    [theme.breakpoints.down('sm')]: {
+        fontSize: '1.2rem',
+        marginBottom: '1.5rem',
+    },
+}));
 
-const MarqueeContainer = styled(Box)(({ width = '80%' }) => ({
+const MarqueeContainer = styled(Box)(({ width = '80%', theme }) => ({
     width: width,
     maxWidth: '1000px',
     overflow: 'hidden',
@@ -61,6 +65,12 @@ const MarqueeContainer = styled(Box)(({ width = '80%' }) => ({
         right: 0,
         background: 'linear-gradient(to left, #F8F8FF, transparent)',
     },
+    [theme.breakpoints.down('sm')]: {
+        width: '100%',
+        '&::before, &::after': {
+            width: '50px', // Smaller fade gradient on mobile
+        },
+    },
 }));
 
 const MarqueeTrack = styled(Box)(({ speed = 30, direction = 'left' }) => ({
@@ -75,7 +85,7 @@ const MarqueeTrack = styled(Box)(({ speed = 30, direction = 'left' }) => ({
     },
 }));
 
-const TechItem = styled(Box)({
+const TechItem = styled(Box)(({ theme }) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -89,20 +99,28 @@ const TechItem = styled(Box)({
         opacity: 1,
         transform: 'scale(1.05)',
     },
-});
+    [theme.breakpoints.down('sm')]: {
+        minWidth: '70px',
+    },
+}));
 
-const TechLogo = styled('img')({
+const TechLogo = styled('img')(({ theme }) => ({
     height: '60px',
     width: 'auto',
     maxWidth: '100px',
     objectFit: 'contain',
     pointerEvents: 'none',
-});
+    [theme.breakpoints.down('sm')]: {
+        height: '40px',
+        maxWidth: '70px',
+    },
+}));
 
 export default function TechStackMarquee() {
     const languages = [
         { name: 'Java', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
         { name: 'Spring Boot', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg' },
+        { name: 'Material UI', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg' },
         { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
         { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
         { name: 'TypeScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
@@ -120,6 +138,7 @@ export default function TechStackMarquee() {
         { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
         { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
         { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+        { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg' },
         { name: 'Jenkins', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg' },
         { name: 'Figma', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
         { name: 'GitHub Copilot', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },

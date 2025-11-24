@@ -198,6 +198,9 @@ export const useStyles = makeStyles((theme) => ({
     fontStyle: "normal",
     fontWeight: 800,
   },
+  textMain: {
+    color: "#373C44",
+  },
   textExtraBold: {
     fontFamily: "Montserrat",
     fontStyle: "normal",
@@ -215,8 +218,11 @@ export const useStyles = makeStyles((theme) => ({
   },
   bannerTextSmallPurple: {
     color: "#9B09DF",
-    fontSize: "2.4rem",
+    fontSize: "2.2rem",
     lineHeight: "3.6rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.8rem",
+    },
   },
   bannerTextNormal: {
     color: "#373C44",
@@ -225,7 +231,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   bannerTextPurple: {
     color: "#9B09DF",
-    fontSize: "3.2rem",
+    fontSize: "3.0rem",
     lineHeight: "4rem",
   },
   bannerTextPink: {
