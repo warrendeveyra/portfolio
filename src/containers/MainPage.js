@@ -5,14 +5,14 @@ import {
   BannerText,
   BannerIllustration,
 } from "./../components/";
-import { AboutMe, Experience, RecentWorks, Achievements, TechStackMarquee } from "./../components/sections";
+import { AboutMe, Experience, RecentWorks, Achievements, TechStackMarquee, Footer } from "./../components/sections";
 
 export class MainPage extends Component {
   render() {
     return (
       <>
         <NavigationHeader />
-        <Container component="main" maxWidth="lg">
+        <Container component="main" maxWidth="lg" sx={{ paddingTop: '9vh' }}>
           <Container maxWidth="lg">
             <Grid container spacing={2} style={{ height: "100vh", marginTop: "-8vh" }}>
               <BannerText />
@@ -20,13 +20,14 @@ export class MainPage extends Component {
             </Grid>
             <Grid container spacing={2}>
               <TechStackMarquee />
-              <AboutMe />
-              <Experience />
               <RecentWorks />
+              <Experience />
               <Achievements />
+              <AboutMe />
             </Grid>
           </Container>
         </Container>
+        <Footer />
       </>
     );
   }

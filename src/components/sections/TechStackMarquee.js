@@ -1,45 +1,16 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { styled, keyframes } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
+import { motion } from 'framer-motion';
 
-const scrollLeft = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-`;
-
-const scrollRight = keyframes`
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-`;
-
-const SectionContainer = styled(Box)({
+const SectionContainer = styled(Box)(({ theme }) => ({
     width: '100%',
     padding: '2rem 0',
     marginBottom: '2rem',
-    textAlign: 'center',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-});
-
-const SectionTitle = styled(Typography)(({ theme }) => ({
-    fontSize: '1.5rem',
-    fontWeight: 600,
-    color: '#373C44',
-    marginBottom: '2rem',
-    fontFamily: 'Montserrat',
-    [theme.breakpoints.down('sm')]: {
-        fontSize: '1.2rem',
-        marginBottom: '1.5rem',
-    },
+    textAlign: 'center',
 }));
 
 const MarqueeContainer = styled(Box)(({ width = '80%', theme }) => ({
@@ -68,20 +39,8 @@ const MarqueeContainer = styled(Box)(({ width = '80%', theme }) => ({
     [theme.breakpoints.down('sm')]: {
         width: '100%',
         '&::before, &::after': {
-            width: '50px', // Smaller fade gradient on mobile
+            width: '50px',
         },
-    },
-}));
-
-const MarqueeTrack = styled(Box)(({ speed = 30, direction = 'left' }) => ({
-    display: 'flex',
-    gap: '1rem',
-    animation: `${direction === 'left' ? scrollLeft : scrollRight} ${speed}s linear infinite`,
-    willChange: 'transform',
-    backfaceVisibility: 'hidden',
-    perspective: 1000,
-    '&:hover': {
-        animationPlayState: 'paused',
     },
 }));
 
@@ -144,35 +103,72 @@ export default function TechStackMarquee() {
         { name: 'GitHub Copilot', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
     ];
 
-    // Create 8x duplicates for ultra-smooth scrolling
-    const languageItems = Array(8).fill(languages).flat();
-    const toolItems = Array(8).fill(tools).flat();
+    const marqueeVariants = {
+        animate: (custom) => ({
+            x: custom.direction === 'left' ? [0, '-50%'] : ['-50%', 0],
+            transition: {
+                x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: custom.duration,
+                    ease: "linear",
+                },
+            },
+        }),
+    };
+
+    const TechSet = ({ items, type }) => (
+        <Box sx={{ display: 'flex', gap: '2rem', pr: '2rem' }}>
+            {items.map((tech, index) => (
+                <TechItem key={`${type}-${tech.name}-${index}`}>
+                    <TechLogo src={tech.logo} alt={tech.name} />
+                </TechItem>
+            ))}
+        </Box>
+    );
 
     return (
         <SectionContainer>
-            <SectionTitle>Technologies I work with</SectionTitle>
+            <Typography
+                variant="h4"
+                sx={{
+                    fontFamily: "Montserrat",
+                    fontWeight: "bold",
+                    fontSize: "2rem",
+                    color: "#373C44",
+                    mb: 4
+                }}
+            >
+                <b>Technologies I work with</b>
+            </Typography>
 
-            {/* Top Marquee - Languages & Frameworks (slower, left) */}
-            <MarqueeContainer width="80%">
-                <MarqueeTrack speed={50} direction="left">
-                    {languageItems.map((tech, index) => (
-                        <TechItem key={`lang-${tech.name}-${index}`}>
-                            <TechLogo src={tech.logo} alt={tech.name} />
-                        </TechItem>
-                    ))}
-                </MarqueeTrack>
+            {/* Top Marquee */}
+            <MarqueeContainer width="90%">
+                <motion.div
+                    style={{ display: 'flex', width: 'max-content' }}
+                    variants={marqueeVariants}
+                    animate="animate"
+                    custom={{ direction: 'left', duration: 50 }}
+                >
+                    <TechSet items={languages} type="lang1" />
+                    <TechSet items={languages} type="lang2" />
+                </motion.div>
             </MarqueeContainer>
 
-            {/* Bottom Marquee - Tools (faster, right) */}
-            <MarqueeContainer width="60%">
-                <MarqueeTrack speed={30} direction="right">
-                    {toolItems.map((tech, index) => (
-                        <TechItem key={`tool-${tech.name}-${index}`}>
-                            <TechLogo src={tech.logo} alt={tech.name} />
-                        </TechItem>
-                    ))}
-                </MarqueeTrack>
+            {/* Bottom Marquee */}
+            <MarqueeContainer width="70%">
+                <motion.div
+                    style={{ display: 'flex', width: 'max-content' }}
+                    variants={marqueeVariants}
+                    animate="animate"
+                    custom={{ direction: 'right', duration: 80 }}
+                >
+                    <TechSet items={tools} type="tool1" />
+                    <TechSet items={tools} type="tool2" />
+                </motion.div>
             </MarqueeContainer>
         </SectionContainer>
     );
 }
+
+
