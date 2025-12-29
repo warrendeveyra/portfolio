@@ -38,7 +38,7 @@ const projects = [
     id: 2,
     title: "TCG Placeholder Gen",
     description: "A community-focused tool built to simplify card collection for TCG enthusiasts. This free application allows collectors to generate and print professional placeholders for their binders, helping organize sets with ease.",
-    tags: ["React", "TailwindCSS", "PWA", "REST API"],
+    tags: ["React", "TailwindCSS", "PWA", "GraphQL", "Supabase"],
     images: [TCGLanding, TCGSet, TCGCustomSet, TCGPrintSettings],
     color: "#a855f7",
     link: "https://warrendeveyra.github.io/TcgPlaceholderGen/"
