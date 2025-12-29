@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.js": "/portfolio/static/js/main.45d07cd4.js",
+    "static/js/206.ef2d90f6.chunk.js": "/portfolio/static/js/206.ef2d90f6.chunk.js",
+    "static/media/Warren De Veyra - Resume 2025.pdf": "/portfolio/static/media/Warren De Veyra - Resume 2025.b4a2cd1e0f4a4cda5c00.pdf",
+    "static/media/tcg_custom_set.png": "/portfolio/static/media/tcg_custom_set.b2b01fd31f40817a1a2c.png",
+    "static/media/tcg_set.png": "/portfolio/static/media/tcg_set.311f2b3c20825c9cc58d.png",
+    "static/media/wireframe_landing.png": "/portfolio/static/media/wireframe_landing.d31886c02f749364e807.png",
+    "static/media/tcg_landing.png": "/portfolio/static/media/tcg_landing.1f0b4bd5d4e058b9480a.png",
+    "static/media/rentoph_coming_soon.png": "/portfolio/static/media/rentoph_coming_soon.9bb9ea2b7a490289bc0e.png",
+    "static/media/calq_landing.png": "/portfolio/static/media/calq_landing.33c7dec560746881027d.png",
+    "static/media/tcg_print_settings.png": "/portfolio/static/media/tcg_print_settings.9cb952250963d226baa0.png",
+    "static/media/calq_settings.png": "/portfolio/static/media/calq_settings.e841b50f9614990202ca.png",
+    "static/media/calq_dashboard.png": "/portfolio/static/media/calq_dashboard.b56a13b9cdb8d286289d.png",
+    "static/media/calq_add_food.png": "/portfolio/static/media/calq_add_food.1c04e3d3f264ed87817e.png",
+    "static/media/nbi.png": "/portfolio/static/media/nbi.0170d912ac2330783762.png",
+    "static/media/elipse.svg": "/portfolio/static/media/elipse.6a1a3edb3d8c1608000c5c47d60d291a.svg",
+    "index.html": "/portfolio/index.html"
+  },
+  "entrypoints": [
+    "static/js/main.45d07cd4.js"
+  ]
+}
