@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Grid, Typography, Box, Chip, Paper, IconButton } from "@mui/material";
+import { Grid, Typography, Box, Chip, Paper, IconButton, Modal, Fade } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import LaunchIcon from '@mui/icons-material/Launch';
+import CloseIcon from '@mui/icons-material/Close';
+import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import { useStyles } from "../../styles/theme";
 
 // Cal-Q Assets
@@ -19,7 +21,10 @@ import TCGCustomSet from "../../assets/images/projects/tcg_custom_set.png";
 import TCGPrintSettings from "../../assets/images/projects/tcg_print_settings.png";
 
 // RentoPH Assets
-import RentoPHComingSoon from "../../assets/images/projects/rentoph_coming_soon.png";
+import RentoPHHero from "../../assets/images/projects/rentoph_hero.png";
+import RentoPHFleet from "../../assets/images/projects/rentoph_fleet.png";
+import RentoPHTrust from "../../assets/images/projects/rentoph_trust.png";
+import RentoPHPricing from "../../assets/images/projects/rentoph_pricing.png";
 
 // San Policarpo Assets
 import WireframeLanding from "../../assets/images/projects/wireframe_landing.png";
@@ -46,11 +51,11 @@ const projects = [
   {
     id: 3,
     title: "RentoPH",
-    description: "A comprehensive rental platform designed to simplify the Philippine property market. From discovery to payment, it provides a secure, all-in-one dashboard to manage the entire rental lifecycle for both tenants and owners.",
-    tags: ["React Native", "React", "Spring Boot", "AWS", "AI/ML"],
-    images: [RentoPHComingSoon],
-    color: "#6366f1",
-    link: "Coming Soon"
+    description: "A peer-to-peer vehicle rental platform for the Philippines. Hosts share one booking link across Facebook, Instagram, and TikTok to turn followers into real bookings, backed by verified renters, secure deposits, and double-booking-proof scheduling.",
+    tags: ["React", "PWA", "Supabase", "AI/ML"],
+    images: [RentoPHHero, RentoPHFleet, RentoPHTrust, RentoPHPricing],
+    color: "#1a7a3e",
+    link: "https://www.rento-ph.com/"
   },
   {
     id: 4,
@@ -67,6 +72,7 @@ export default function RecentWorks() {
   const classes = useStyles();
   const [activeProject, setActiveProject] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
   // Auto-cycle through images for active project
   useEffect(() => {
@@ -293,12 +299,38 @@ export default function RecentWorks() {
                         <motion.img
                           src={projects[activeProject].images[activeImageIndex]}
                           alt={`${projects[activeProject].title} ${activeImageIndex + 1}`}
+                          onClick={() => setLightboxOpen(true)}
                           style={{
                             width: '100%',
                             height: '100%',
-                            objectFit: 'cover'
+                            objectFit: 'cover',
+                            cursor: 'zoom-in'
                           }}
                         />
+                        {/* Zoom hint on hover */}
+                        <Box
+                          onClick={() => setLightboxOpen(true)}
+                          sx={{
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: 'rgba(0,0,0,0)',
+                            transition: 'background-color 0.2s ease',
+                            cursor: 'zoom-in',
+                            opacity: 0,
+                            '&:hover': {
+                              backgroundColor: 'rgba(0,0,0,0.25)',
+                              opacity: 1
+                            }
+                          }}
+                        >
+                          <ZoomInIcon sx={{ color: '#fff', fontSize: '2.5rem' }} />
+                        </Box>
                         {/* Global Color Tint (Hue) Overlay */}
                         <Box
                           sx={{
@@ -364,6 +396,58 @@ export default function RecentWorks() {
           </Paper>
         </motion.div>
       </Grid>
+
+      {/* Fullscreen image lightbox */}
+      <Modal
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        closeAfterTransition
+        sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      >
+        <Fade in={lightboxOpen}>
+          <Box
+            onClick={() => setLightboxOpen(false)}
+            sx={{
+              width: '100vw',
+              height: '100vh',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              outline: 'none',
+              padding: { xs: 2, md: 6 },
+              boxSizing: 'border-box'
+            }}
+          >
+            <IconButton
+              onClick={() => setLightboxOpen(false)}
+              sx={{
+                position: 'absolute',
+                top: { xs: 12, md: 24 },
+                right: { xs: 12, md: 24 },
+                backgroundColor: 'rgba(0,0,0,0.5)',
+                color: '#fff',
+                '&:hover': { backgroundColor: 'rgba(0,0,0,0.7)' }
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
+            <Box
+              component="img"
+              src={projects[activeProject].images[activeImageIndex]}
+              alt={`${projects[activeProject].title} full view`}
+              onClick={(e) => e.stopPropagation()}
+              sx={{
+                maxWidth: '100%',
+                maxHeight: '100%',
+                objectFit: 'contain',
+                borderRadius: '8px',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+                cursor: 'default'
+              }}
+            />
+          </Box>
+        </Fade>
+      </Modal>
     </Grid>
   );
 }

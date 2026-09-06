@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 
 import { useStyles } from "../../styles/theme";
 import acn from "../../assets/images/acn.png";
+import globant from "../../assets/images/globant.png";
 import nbi from "../../assets/images/nbi.png";
 import sunlife from "../../assets/images/sunlife.png";
 import ubx from "../../assets/images/ubx.png";
@@ -90,6 +91,42 @@ export default function Experience() {
                   <TimelineSeparator>
                     <motion.div variants={popVariants}>
                       <TimelineDot style={{ padding: 0, overflow: 'hidden', backgroundColor: 'transparent', boxShadow: 'none', margin: 0 }}>
+                        <Avatar src={globant} alt="Globant" style={{ width: '50px', height: '50px', backgroundColor: '#fff', padding: '6px', border: '4px solid #9B09DF' }} imgProps={{ style: { objectFit: 'contain' } }} />
+                      </TimelineDot>
+                    </motion.div>
+                    <MotionTimelineConnector
+                      variants={lineVariants}
+                      style={{ transformOrigin: "top", width: "2px", backgroundColor: "#9B09DF" }}
+                    />
+                  </TimelineSeparator>
+                  <motion.div variants={popVariants} style={{ flexGrow: 1 }}>
+                    <TimelineContent style={{ marginBottom: "2rem" }}>
+                      <Typography variant="body2" color="textSecondary">
+                        May 2026 - Present
+                      </Typography>
+                      <Typography variant="h6" component="h1" style={{ fontWeight: "bold" }}>
+                        Software Engineer Ssr.
+                      </Typography>
+                      <Typography variant="subtitle1" style={{ fontStyle: "italic" }}>
+                        Globant — Ayala Makati, Philippines
+                      </Typography>
+                      <ExpandableText text="Support and maintain Java-based applications across multiple projects, ensuring stability, performance, and compliance with evolving business needs. Resolve security findings across systems, strengthening application resilience and safeguarding client data. Collaborate directly with clients to gather requirements and discuss new feature implementations, translating business goals into technical solutions. Mentor junior developers, providing guidance on technical challenges and fostering team growth, while managing team tasks and priorities and tracking tickets across all ongoing workstreams." />
+                    </TimelineContent>
+                  </motion.div>
+                </motion.div>
+              </TimelineItem>
+
+              <TimelineItem>
+                <motion.div
+                  variants={containerVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: "-100px" }}
+                  style={{ display: 'flex', width: '100%' }}
+                >
+                  <TimelineSeparator>
+                    <motion.div variants={popVariants}>
+                      <TimelineDot style={{ padding: 0, overflow: 'hidden', backgroundColor: 'transparent', boxShadow: 'none', margin: 0 }}>
                         <Avatar src={acn} alt="Accenture" style={{ width: '50px', height: '50px', backgroundColor: '#fff', padding: '6px', border: '4px solid #9B09DF' }} imgProps={{ style: { objectFit: 'contain' } }} />
                       </TimelineDot>
                     </motion.div>
@@ -101,7 +138,7 @@ export default function Experience() {
                   <motion.div variants={popVariants} style={{ flexGrow: 1 }}>
                     <TimelineContent style={{ marginBottom: "2rem" }}>
                       <Typography variant="body2" color="textSecondary">
-                        Apr 2025 - Present
+                        Apr 2025 - May 2026
                       </Typography>
                       <Typography variant="h6" component="h1" style={{ fontWeight: "bold" }}>
                         Senior Software Engineer

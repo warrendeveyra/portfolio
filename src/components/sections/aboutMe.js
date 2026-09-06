@@ -171,8 +171,8 @@ export default function AboutMe() {
                           variant="contained"
                           color="secondary"
                           component="a"
-                          href={require("../../assets/resume/Warren De Veyra - Resume 2025.pdf")}
-                          download="Ren De Veyra - Resume 2025.pdf"
+                          href={require("../../assets/resume/Warren De Veyra - Resume 2026.pdf")}
+                          download="Warren De Veyra - Resume 2026.pdf"
                         >
                           Download CV
                         </Button>
