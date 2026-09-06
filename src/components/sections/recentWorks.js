@@ -37,7 +37,7 @@ const projects = [
   {
     id: 2,
     title: "TCG Placeholder Gen",
-    description: "A community-focused tool built to simplify card collection for TCG enthusiasts. This free application allows collectors to generate and print professional placeholders for their binders, helping organize sets with ease.",
+    description: "A community-focused tool built to simplify card collection for TCG enthusiasts. This open-source tool allows collectors to generate and print professional placeholders for their binders, helping organize sets with ease.",
     tags: ["React", "TailwindCSS", "PWA", "GraphQL", "Supabase"],
     images: [TCGLanding, TCGSet, TCGCustomSet, TCGPrintSettings],
     color: "#a855f7",
@@ -191,10 +191,10 @@ export default function RecentWorks() {
                         <Typography
                           variant="body1"
                           paragraph
-                          style={{
+                          sx={{
                             lineHeight: 1.7,
                             marginBottom: '1.5rem',
-                            color: '#373C44',
+                            color: 'text.primary',
                             fontSize: '1rem',
                             minHeight: '4.5rem'
                           }}
@@ -221,8 +221,8 @@ export default function RecentWorks() {
                             {projects[activeProject].link === "Coming Soon" ? (
                               <Typography
                                 variant="body1"
-                                style={{
-                                  color: '#999',
+                                sx={{
+                                  color: 'text.secondary',
                                   fontWeight: 700,
                                   fontSize: '1.1rem',
                                   fontStyle: 'italic'
@@ -256,8 +256,8 @@ export default function RecentWorks() {
                         <Box mt={2}>
                           <Typography
                             variant="body2"
-                            style={{
-                              color: '#999',
+                            sx={{
+                              color: 'text.secondary',
                               fontSize: '0.9rem'
                             }}
                           >
@@ -347,7 +347,7 @@ export default function RecentWorks() {
                               width: activeImageIndex === idx ? '2rem' : '0.5rem',
                               height: '0.5rem',
                               borderRadius: '0.25rem',
-                              backgroundColor: activeImageIndex === idx ? projects[activeProject].color : 'rgba(255,255,255,0.5)',
+                              backgroundColor: activeImageIndex === idx ? projects[activeProject].color : 'rgba(128,128,128,0.3)',
                               transition: 'all 0.3s ease',
                               cursor: 'pointer'
                             }}

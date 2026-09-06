@@ -7,8 +7,10 @@ import { Container, Grid, Link, Stack, Box } from "@mui/material";
 import CssBaseline from "@mui/material/CssBaseline";
 import { useStyles } from "./../styles/theme";
 import { motion, AnimatePresence } from "framer-motion";
+import { ColorModeContext } from "../context/ColorModeContext";
 
 import { NavigationLogo } from "./svg";
+import ThemeSwitch from "./ThemeSwitch";
 
 const navItems = [
   { label: 'Works', id: 'works' },
@@ -26,7 +28,7 @@ const MenuIcon = ({ isOpen }) => {
           position: 'absolute',
           width: 20,
           height: 2,
-          backgroundColor: '#373C44',
+          backgroundColor: 'currentColor',
           left: 2,
           borderRadius: 1
         }}
@@ -41,7 +43,7 @@ const MenuIcon = ({ isOpen }) => {
           position: 'absolute',
           width: 20,
           height: 2,
-          backgroundColor: '#373C44',
+          backgroundColor: 'currentColor',
           left: 2,
           top: 11,
           borderRadius: 1
@@ -57,7 +59,7 @@ const MenuIcon = ({ isOpen }) => {
           position: 'absolute',
           width: 20,
           height: 2,
-          backgroundColor: '#373C44',
+          backgroundColor: 'currentColor',
           left: 2,
           borderRadius: 1
         }}
@@ -73,6 +75,7 @@ const MenuIcon = ({ isOpen }) => {
 
 export default function NavigationHeader() {
   const classes = useStyles();
+  const { mode, toggleColorMode } = React.useContext(ColorModeContext);
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const scrollToSection = (sectionId) => {
@@ -109,10 +112,11 @@ export default function NavigationHeader() {
           top: 0,
           left: 0,
           right: 0,
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backgroundColor: mode === 'light' ? 'rgba(255, 255, 255, 0.95)' : 'rgba(18, 18, 18, 0.95)',
           backdropFilter: 'blur(10px)',
-          borderBottom: '1px solid rgba(0,0,0,0.05)',
-          zIndex: 1100
+          borderBottom: mode === 'light' ? '1px solid rgba(0,0,0,0.1)' : '1px solid rgba(255,255,255,0.1)',
+          zIndex: 1100,
+          transition: 'background-color 0.3s ease, border-bottom 0.3s ease'
         }}
       >
         <Container maxWidth="lg">
@@ -133,8 +137,10 @@ export default function NavigationHeader() {
                   <b>{item.label}</b>
                 </Link>
               ))}
+              <ThemeSwitch mode={mode} toggleColorMode={toggleColorMode} />
             </Stack>
-            <Grid className={classes.navBarSm} sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <Grid className={classes.navBarSm} sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', gap: 2 }}>
+              <ThemeSwitch mode={mode} toggleColorMode={toggleColorMode} />
               <IconButton
                 aria-label={mobileOpen ? "close menu" : "open menu"}
                 color="inherit"
@@ -163,8 +169,8 @@ export default function NavigationHeader() {
                   alignItems: 'center',
                   gap: 2,
                   py: 3,
-                  backgroundColor: 'rgba(255, 255, 255, 0.98)',
-                  borderTop: '1px solid rgba(0,0,0,0.05)'
+                  backgroundColor: mode === 'light' ? 'rgba(255, 255, 255, 0.98)' : 'rgba(18, 18, 18, 0.98)',
+                  borderTop: mode === 'light' ? '1px solid rgba(0,0,0,0.05)' : '1px solid rgba(255,255,255,0.05)'
                 }}
               >
                 {navItems.map((item, index) => (
@@ -181,7 +187,7 @@ export default function NavigationHeader() {
                       sx={{
                         fontSize: '1.1rem',
                         fontWeight: 600,
-                        color: '#373C44',
+                        color: mode === 'light' ? '#373C44' : '#E0E0E0',
                         py: 1,
                         transition: 'color 0.3s ease',
                         '&:hover': {

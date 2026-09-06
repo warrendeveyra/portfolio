@@ -30,11 +30,11 @@ const MarqueeContainer = styled(Box)(({ width = '80%', theme }) => ({
     },
     '&::before': {
         left: 0,
-        background: 'linear-gradient(to right, #F8F8FF, transparent)',
+        background: `linear-gradient(to right, ${theme.palette.background.default}, transparent)`,
     },
     '&::after': {
         right: 0,
-        background: 'linear-gradient(to left, #F8F8FF, transparent)',
+        background: `linear-gradient(to left, ${theme.palette.background.default}, transparent)`,
     },
     [theme.breakpoints.down('sm')]: {
         width: '100%',
@@ -135,7 +135,7 @@ export default function TechStackMarquee() {
                     fontFamily: "Montserrat",
                     fontWeight: "bold",
                     fontSize: "2rem",
-                    color: "#373C44",
+                    color: "text.primary",
                     mb: 4
                 }}
             >

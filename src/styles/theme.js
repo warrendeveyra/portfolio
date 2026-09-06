@@ -2,13 +2,23 @@ import { createTheme } from "@mui/material/styles";
 import { makeStyles } from "@mui/styles";
 import ElipseVector from "./../assets/elipse.svg";
 
-export const theme = createTheme({
+export const getTheme = (mode) => createTheme({
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          transition: 'background-color 0.3s ease, color 0.3s ease',
+        },
+      },
+    },
     MuiAppBar: {
       styleOverrides: {
+        root: {
+          transition: 'background-color 0.3s ease, color 0.3s ease',
+        },
         colorDefault: {
-          backgroundColor: "#F8F8FF",
-          color: "#000",
+          backgroundColor: mode === 'light' ? "#F8F8FF" : "#121212",
+          color: mode === 'light' ? "#000" : "#fff",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.04)",
         },
         colorPrimary: {
@@ -74,11 +84,14 @@ export const theme = createTheme({
     },
     MuiPaper: {
       styleOverrides: {
+        root: {
+          transition: 'background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease',
+        },
         elevation1: {
           padding: "32px 48px 32px 48px",
           marginTop: "22px",
           marginBottom: "110px",
-          background: "#FAFAFF",
+          background: mode === 'light' ? "#FAFAFF" : "#1E1E1E",
           boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.04)",
           borderRadius: "6px",
         },
@@ -114,33 +127,34 @@ export const theme = createTheme({
           padding: "32px 48px 32px 48px",
           marginTop: "22px",
           marginBottom: "22px",
-          background: "#FAFAFF",
+          background: mode === 'light' ? "#FAFAFF" : "#1E1E1E",
           boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.04)",
           borderRadius: "6px",
           "&:hover": {
-            boxShadow: '0px 16px 38px -8px rgba(0, 0, 0, 0.05)'
+            boxShadow: mode === 'light' ? '0px 16px 38px -8px rgba(0, 0, 0, 0.05)' : '0px 16px 38px -8px rgba(0, 0, 0, 0.3)'
           }
         }
       },
     },
   },
   palette: {
-    primary: {
-      main: "#9B09DF",
-      contrastText: "#fff",
-    },
-    secondary: {
-      main: "#FAC036",
-      contrastText: "#fff",
-    },
+    mode,
     background: {
-      default: "#F8F8FF",
+      default: mode === 'light' ? "#F8F8FF" : "#121212",
+      paper: mode === 'light' ? "#FAFAFF" : "#1E1E1E",
     },
+    text: {
+      primary: mode === 'light' ? "#373C44" : "#E0E0E0",
+      secondary: mode === 'light' ? "#666" : "#AAA",
+    }
   },
   typography: {
     fontFamily: ['"Montserrat"', "Open Sans"].join(","),
   },
 });
+
+export const theme = getTheme('light');
+
 
 export const useStyles = makeStyles((theme) => ({
   root: {
@@ -166,8 +180,9 @@ export const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: "2rem",
     lineHeight: "2rem",
-    color: "#373C44",
+    color: theme.palette.text.primary,
     paddingLeft: theme.spacing(0.5),
+    transition: 'color 0.3s ease',
     "&:before": {
       zIndex: -1,
       content: '""',
@@ -199,7 +214,8 @@ export const useStyles = makeStyles((theme) => ({
     fontWeight: 800,
   },
   textMain: {
-    color: "#373C44",
+    color: theme.palette.text.primary,
+    transition: 'color 0.3s ease',
   },
   textExtraBold: {
     fontFamily: "Montserrat",
@@ -225,9 +241,10 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
   bannerTextNormal: {
-    color: "#373C44",
+    color: theme.palette.text.primary,
     fontSize: "3rem",
     lineHeight: "4rem",
+    transition: 'color 0.3s ease',
   },
   bannerTextPurple: {
     color: "#9B09DF",
@@ -243,11 +260,12 @@ export const useStyles = makeStyles((theme) => ({
     fontWeight: "bold",
     fontSize: "15px",
     lineHeight: "17px",
-    color: "#373C44",
+    color: theme.palette.text.primary,
     paddingLeft: theme.spacing(2),
     paddingRight: theme.spacing(2),
     textDecoration: "none",
     letterSpacing: "0.05em",
+    transition: 'color 0.3s ease',
     "&:hover": {
       textDecoration: "none",
       transition: "0.2s",
@@ -264,21 +282,24 @@ export const useStyles = makeStyles((theme) => ({
     color: "#FAC036",
   },
   githubButton: {
-    fill: "#373C44",
+    fill: theme.palette.text.primary,
+    transition: 'fill 0.3s ease',
     "&:hover": {
       transition: "0.2s",
       fill: "#6e5494",
     },
   },
   gitlabButton: {
-    fill: "#373C44",
+    fill: theme.palette.text.primary,
+    transition: 'fill 0.3s ease',
     "&:hover": {
       transition: "0.2s",
       fill: "#FCA326",
     },
   },
   linkedInButton: {
-    fill: "#373C44",
+    fill: theme.palette.text.primary,
+    transition: 'fill 0.3s ease',
     "&:hover": {
       transition: "0.2s",
       fill: "#0077b5",

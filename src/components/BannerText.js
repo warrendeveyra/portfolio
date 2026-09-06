@@ -5,7 +5,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import clsx from "clsx";
 
 import SingleAvatar from "./../components/svg/singleAvatar";
-import { LinkedInIcon, GithubIcon, GitlabIcon, Scrollicon } from "./icons";
+import { LinkedInIcon, GithubIcon, GitlabIcon, ScrollIcon } from "./icons";
 import { useStyles } from "./../styles/theme";
 import { TypingEffect } from "./TypingEffect";
 
@@ -151,7 +151,7 @@ export default function NavigationHeader() {
           alignItems="center"
           className={classes.animateTransition}
         >
-          <Scrollicon />
+          <ScrollIcon />
         </Box>
       </Box>
     </Grid>

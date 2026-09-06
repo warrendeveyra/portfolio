@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, IconButton, Link } from "@mui/material";
+import { Box, Typography, IconButton, Link, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -25,6 +25,8 @@ const socialLinks = [
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
+    const theme = useTheme();
+    const mode = theme.palette.mode;
 
     return (
         <Box
@@ -33,8 +35,10 @@ export default function Footer() {
                 width: '100%',
                 py: 6,
                 mt: 8,
-                borderTop: '1px solid rgba(0,0,0,0.08)',
-                background: 'linear-gradient(180deg, transparent 0%, rgba(248,211,80,0.05) 100%)'
+                borderTop: mode === 'light' ? '1px solid rgba(0,0,0,0.08)' : '1px solid rgba(255,255,255,0.08)',
+                background: mode === 'light'
+                    ? 'linear-gradient(180deg, transparent 0%, rgba(248,211,80,0.05) 100%)'
+                    : 'linear-gradient(180deg, transparent 0%, rgba(248,211,80,0.02) 100%)'
             }}
         >
             <Box
@@ -67,9 +71,9 @@ export default function Footer() {
                                 sx={{
                                     width: 48,
                                     height: 48,
-                                    color: '#64748b',
-                                    bgcolor: 'rgba(0,0,0,0.03)',
-                                    border: '1px solid rgba(0,0,0,0.05)',
+                                    color: 'text.secondary',
+                                    bgcolor: mode === 'light' ? 'rgba(0,0,0,0.03)' : 'rgba(255,255,255,0.05)',
+                                    border: mode === 'light' ? '1px solid rgba(0,0,0,0.05)' : '1px solid rgba(255,255,255,0.05)',
                                     transition: 'all 0.3s ease',
                                     '&:hover': {
                                         color: '#F8D350',
@@ -95,7 +99,7 @@ export default function Footer() {
                     <Typography
                         variant="body2"
                         sx={{
-                            color: '#94a3b8',
+                            color: 'text.secondary',
                             fontWeight: 500,
                             letterSpacing: '0.5px'
                         }}
@@ -114,7 +118,8 @@ export default function Footer() {
                     <Typography
                         variant="caption"
                         sx={{
-                            color: '#cbd5e1',
+                            color: 'text.secondary',
+                            opacity: 0.6,
                             fontSize: '0.75rem'
                         }}
                     >

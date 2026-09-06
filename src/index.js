@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import { createRoot } from "react-dom/client";
 import MainPage from "./containers/MainPage";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "./styles/theme";
+import { getTheme } from "./styles/theme";
+import { ColorModeProvider, ColorModeContext } from "./context/ColorModeContext";
+
+const AppWrapper = () => {
+  const { mode } = useContext(ColorModeContext);
+  const theme = getTheme(mode);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <MainPage />
+    </ThemeProvider>
+  );
+};
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <MainPage />
-    </ThemeProvider>
+    <ColorModeProvider>
+      <AppWrapper />
+    </ColorModeProvider>
   </React.StrictMode>
 );
 

@@ -1,11 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Grid, Typography, Box, Paper, Avatar } from "@mui/material";
 import { motion } from "framer-motion";
 import { useStyles } from "../../styles/theme";
-import StarIcon from '@mui/icons-material/Star';
-import SchoolIcon from '@mui/icons-material/School';
-import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
-import VerifiedIcon from '@mui/icons-material/Verified';
+import { ColorModeContext } from "../../context/ColorModeContext";
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 
@@ -62,6 +59,7 @@ const cardVariants = {
 
 export default function Achievements() {
   const classes = useStyles();
+  const { mode } = useContext(ColorModeContext);
 
   return (
     <Box component="section" id="achievements" sx={{ width: '100%', py: 8 }}>
@@ -96,13 +94,13 @@ export default function Achievements() {
                         p: 0,
                         width: '100%',
                         minHeight: '440px',
-                        borderRadius: '24px',
+                        borderRadius: '12px',
                         display: 'flex',
                         flexDirection: 'column',
                         overflow: 'hidden',
-                        backgroundColor: '#FFFFFF',
-                        border: '1px solid rgba(0,0,0,0.05)',
-                        boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
+                        backgroundColor: 'background.paper',
+                        border: mode === 'light' ? '1px solid rgba(0,0,0,0.05)' : '1px solid rgba(255,255,255,0.05)',
+                        boxShadow: mode === 'light' ? '0 4px 20px rgba(0,0,0,0.03)' : '0 4px 20px rgba(0,0,0,0.2)',
                         transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                         '&:hover': {
                           transform: 'translateY(-12px)',
@@ -144,7 +142,7 @@ export default function Achievements() {
                           sx={{
                             fontWeight: 800,
                             mb: 1,
-                            color: '#1a202c',
+                            color: 'text.primary',
                             lineHeight: 1.2,
                             fontSize: '1.1rem'
                           }}
@@ -178,7 +176,7 @@ export default function Achievements() {
                         <Typography
                           variant="body2"
                           sx={{
-                            color: '#64748b',
+                            color: 'text.secondary',
                             lineHeight: 1.6,
                             fontSize: '0.9rem'
                           }}

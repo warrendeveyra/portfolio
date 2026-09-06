@@ -17,7 +17,7 @@ const PinkProgressBar = withStyles((theme) => ({
     borderRadius: 5,
   },
   colorPrimary: {
-    backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+    backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 700],
   },
   bar: {
     borderRadius: 5,
@@ -31,7 +31,7 @@ const PurpleProgressBar = withStyles((theme) => ({
     borderRadius: 5,
   },
   colorPrimary: {
-    backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+    backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 700],
   },
   bar: {
     borderRadius: 5,
@@ -45,7 +45,7 @@ const YellowProgressBar = withStyles((theme) => ({
     borderRadius: 5,
   },
   colorPrimary: {
-    backgroundColor: theme.palette.grey[theme.palette.type === 'light' ? 200 : 700],
+    backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 700],
   },
   bar: {
     borderRadius: 5,
@@ -264,7 +264,7 @@ export default function AboutMe() {
                           style={{ flex: 1, padding: '20px 0' }}
                         >
                           <Box mt={3} pb={2}>
-                            <Cpu size={72} color="#FFFFFF" strokeWidth={2} />
+                            <Cpu size={72} color="#4F545B" strokeWidth={2} />
                           </Box>
                           <Typography align='center' className={classes.colorCardTitle} variant="subtitle1" gutterBottom>
                             Technology

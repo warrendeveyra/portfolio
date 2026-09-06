@@ -1,6 +1,11 @@
 import React from "react";
+import { useTheme } from "@mui/material/styles";
 
-function scrollIcon(props) {
+function ScrollIcon(props) {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === 'dark';
+  const iconColor = isDark ? "#9B09DF" : "#000";
+
   return (
     <svg
       width={29}
@@ -24,18 +29,22 @@ function scrollIcon(props) {
         width={27}
         height={47.077}
         rx={13.5}
-        stroke="#000"
+        stroke={iconColor}
         strokeWidth={2}
+        style={{ transition: 'stroke 0.3s ease' }}
       />
       <circle
         cx={14.5}
         cy={10.039}
         r={4.462}
-        fill="#000"
-        style={{ animation: "scroll 2.5s ease-out infinite" }}
+        fill={iconColor}
+        style={{
+          animation: "scroll 2.5s ease-out infinite",
+          transition: 'fill 0.3s ease'
+        }}
       />
     </svg>
   );
 }
 
-export default scrollIcon;
+export default ScrollIcon;
